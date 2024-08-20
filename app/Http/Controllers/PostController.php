@@ -66,22 +66,7 @@ class PostController extends Controller
         $data['image'] = Storage::disk('public')->putFile('posts', $request->image);
         $post->update($data);
         return redirect('index');
-
-        // $post = Post::find($id);
-        // if($request->has('image'))
-        // {
-        //     Storage::delete($post->image);
-        // }
-        // $request->validate([
-        //     'title' => 'required',
-        //     'content' => 'required',
-        //     'author' => 'required',
-        //     'image' => 'required|image|mimes:jpg,png'
-        // ]);
-
-        // $request->image = Storage::putFile('posts',$request->image);
-        // $post->update($request->all());
-        // return redirect('index');       
+       
     }
 
     public function delete(Request $request, $id)
@@ -96,8 +81,6 @@ class PostController extends Controller
         $post->delete();
         return redirect('index');
 
-        // Post::find($id)->delete();
-        // return redirect('index');
     }
     public function show($id)
     {
