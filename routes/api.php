@@ -20,13 +20,13 @@ Route::group([
 
 Route::controller(PostController::class)->group(function()
 {
-    // Route::middleware('auth:api')->group(function()
-    // {
+    Route::middleware('auth:api')->group(function()
+    {
         Route::get('/index','index');
         Route::get('index/{id}','show');
         Route::post('index/insert','insert');
         Route::post('index/update/{id}','update');
         Route::post('index/delete/{id}','delete');
         
-    // });
+    });
 });
