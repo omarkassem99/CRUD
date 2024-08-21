@@ -61,7 +61,7 @@ class PostController extends Controller
 
         $data['image'] = Storage::putFile('posts',$data['image']); //add image
 
-        $store =Post::create($request->all()); // store data
+        $store =Post::create($data); // store data
 
         if($store)
         {
